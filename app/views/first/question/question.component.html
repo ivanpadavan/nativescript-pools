@@ -1,0 +1,30 @@
+<GridLayout rows="auto,*" [@state]="state" flexGrow="1">
+    <StackLayout row="0">
+        <Label [text]="question.text" class="h1 text-center font-weight-bold"></Label>
+        <Label [text]="title" class="h2 text-center p-10"></Label>
+    </StackLayout>
+
+    <FlexboxLayout flexDirection="column" *ngIf="orientation=='landscape'" row="1" justifyContent="space-around">
+        <FlexboxLayout flexWrap="wrap" flexDirection="row">-->
+            <Button class="btn btn-outline btn-active" *ngFor="let answer of question.answers" flexGrow="1" [text]="answer.text" (tap)="sendAnswer(answer.id)"></Button>
+        </FlexboxLayout>
+    </FlexboxLayout>
+
+    <FlexboxLayout row="1" flexDirection="column" *ngIf="orientation=='portrait'" justifyContent="space-around">
+
+    <StackLayout>
+            <StackLayout class="hr-light"></StackLayout>
+            <ListView [items]="question.answers" class="list-group">
+                <template let-item="item">
+                    <Label [text]="item.text" class="list-group-item" fontSize="24"
+                           [class.selected]="item.id === answerId" (tap)="onRadioTap(item.id)"></Label>
+                </template>
+            </ListView>
+            <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+
+
+        <Button class="btn btn-primary p-16" text="Далее" (tap)="sendAnswer()"></Button>
+    </FlexboxLayout>
+
+</GridLayout>

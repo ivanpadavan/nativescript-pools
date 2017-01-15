@@ -1,0 +1,7 @@
+<GridLayout rows="*, 35" (tap)="globalTap()" (swipe)="globalSwipe($event)" class="page" backgroundColor="#eff7f9">
+    <GridLayout rows="*,auto">
+        <router-outlet></router-outlet>
+        <StackLayout row="1"><banner></banner></StackLayout>
+    </GridLayout>
+    <ticker [text]="tickerText" row="1"></ticker>
+</GridLayout>
