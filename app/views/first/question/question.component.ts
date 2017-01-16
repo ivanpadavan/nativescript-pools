@@ -10,7 +10,6 @@ import {OrientationService} from "../../../services/orientation.service";
 
 
 @Component({
-    moduleId: module.id,
     selector: 'question',
     templateUrl: 'question.component.html',
     styles: [`

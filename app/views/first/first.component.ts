@@ -12,7 +12,7 @@ import {LocalStorageService} from "../../services/localStorage.service";
 
       @Component({
         selector: 'first',
-        templateUrl: `./views/first/first.component.html`
+        templateUrl: `first.component.html`
       })
       export class FirstComponent implements OnInit {
           public tickerText: string;

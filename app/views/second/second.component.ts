@@ -4,53 +4,13 @@ import {LocalStorageService} from "../../services/localStorage.service";
 import {QuestionsService} from "../../services/questions.service";
 import * as dialogsModule from "ui/dialogs";
 import {ImagesService} from "../../services/images.service";
-import { SwissArmyKnife } from 'nativescript-swiss-army-knife/nativescript-swiss-army-knife';
 
 require( "nativescript-master-technology" );
 let immersive = require( "./../immersive" )
 
       @Component({
         selector: '',
-        template: `
-            <ActionBar title="Настройки" class="action-bar">
-                <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" [nsRouterLink]="['/first']" clearHistory="true" pageTransition="slideUp" class="action-item"></NavigationButton>
-            </ActionBar>
-            <ScrollView>
-            <StackLayout>
-                <StackLayout class="form m-5" borderColor="#e0e0e0" borderWidth="1">
-                    <StackLayout class="input-field">
-                         <Label class="h3" text="Бегущая строка: "></Label>
-                         <TextField class="input-border" returnKeyType="done" [(ngModel)]="tickerText" (ngModelChange)="saveTickerText()"></TextField>
-                    </StackLayout>
-                    
-                    <StackLayout class="input-field">
-                         <Label class="h3" text="Адрес сервера: "></Label>
-                         <TextField #apiUrlRef class="input-border" returnKeyType="done" [(ngModel)]="apiUrl" (ngModelChange)="saveApiUrl()" (returnPress)="pressEventHandler($event)"></TextField>
-                    </StackLayout>
-                    
-                    <StackLayout class="hr-light"></StackLayout>
-                    
-                    <StackLayout class="input-field">
-                         <Label class="h3" text="Токен: "></Label>
-                         <TextField #tokenRef class="input-border" returnKeyType="done" [(ngModel)]="token" (ngModelChange)="saveToken()" (returnPress)="pressEventHandler($event)"></TextField>
-                    </StackLayout>
-                    
-                    <StackLayout class="hr-light"></StackLayout>
-                    
-                </StackLayout>
-                <Button text="Стереть данные для входа" class="btn btn-primary" (tap)="clearQuestionData()"></Button>
-                <GridLayout *ngIf="questionsService.questions.length>0" columns="*,*">
-                    <Button text="Загрузить баннер" class="btn btn-primary" (tap)="loadImages()" col="0"></Button>
-                    <Button text="Удалить   баннер" class="btn btn-primary" (tap)="removeImages()" col="1"></Button>
-                </GridLayout>
-                <StackLayout *ngIf="errorMsg && !loading">
-                     <Label textWrap="true" class="text-danger h3" [text]="errorMsg" backgroundColor="white"></Label>
-                     <button class="btn btn-primary" text="Show more" (tap)="verboseError()"></button>
-                </StackLayout>
-                <ActivityIndicator flexGrow="1" busy="true" *ngIf="loading"></ActivityIndicator>
-            </StackLayout>
-            </ScrollView>
-        `
+        templateUrl: 'second.component.html'
       })
       export class SecondComponent implements OnInit {
         public token: string;

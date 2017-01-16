@@ -4,7 +4,6 @@
 import {Component, OnInit, trigger, state, transition, animate, style} from '@angular/core';
 let immersive = require('./../../immersive')
 @Component({
-    moduleId: module.id,
     selector: 'selector',
     templateUrl: 'greeting.component.html',
     animations: [

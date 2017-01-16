@@ -6,7 +6,6 @@ import {setTimeout} from "timer";
 import {RouterExtensions} from "nativescript-angular";
 
 @Component({
-    moduleId: module.id,
     selector: 'selector',
     templateUrl: 'thanks.component.html',
     animations: [

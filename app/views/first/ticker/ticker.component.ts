@@ -10,7 +10,6 @@ import {OrientationService} from "../../../services/orientation.service";
 registerElement("myLabel", () => require('./label').label.Label);
 
 @Component({
-    moduleId: module.id,
     selector: 'ticker',
     styles: [`
         Label {

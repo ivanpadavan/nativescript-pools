@@ -6,7 +6,6 @@ import {OrientationService} from "../../services/orientation.service";
 import {ImagesService} from "../../services/images.service";
 
 @Component({
-    moduleId: module.id,
     selector: 'banner',
     template: '<Image [src]="src" stretch="aspectFit" dock="bottom"></Image>'
 })
